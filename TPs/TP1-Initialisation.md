@@ -42,9 +42,9 @@ git config --global user.email "nom.prénom@partnre.com"
 
 ### "Changement du nom de la branche principale"
 
-    ```console
-    git config --global init.defaultBranch main
-    ```
+```console
+git config --global init.defaultBranch main
+```
 
 ### "Pour aller plus loin"
 
