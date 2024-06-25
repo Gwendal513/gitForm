@@ -11,7 +11,7 @@ mkdir -p docs bin dist
 
 ## Premier fichier
 
-### "Installation de Codium"
+### 💻 Installation de Codium
 
 Pré-requis : [Configuration du serveur de mandataire pour snap](../../../proxy/proxy.md#snap).
 
@@ -21,7 +21,7 @@ sudo snap install --classic codium
 
 Source : [Site officiel de Codium](https://vscodium.com/#install)
 
-### "Création d’un alias Bash"
+### Création d’un alias Bash
 
 ```console
 echo 'alias c.="codium ."' >> .bash_aliases
@@ -39,7 +39,7 @@ L’alias `c.` permet d’ouvrir Codium dans le répertoire courant de votre ter
 git status
 ```
 
-### "État de versionnage"
+### État de versionnage
 
 La commande `status` de Git est très pratique.
 En effet celle-ci vous permet d’avoir facilement les renseignements suivants :
@@ -48,7 +48,7 @@ En effet celle-ci vous permet d’avoir facilement les renseignements suivants 
 * Si vous avez des changements par rapport à votre dernière validation.
 * La version où vous êtes.
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -60,7 +60,7 @@ Maintenant que vous avez créé un nouveau fichier et que vous êtes satisfait d
 son contenu (du moins pour le moment). Vous allez pouvoir faire une première
 version grâce à la commande `commit`.
 
-### "Éditeur par défaut"
+### 💻 Éditeur par défaut
 
 Beaucoup de logiciel notamment ceux en ligne de commande utilise la variable d’environnement `EDITOR`
 afin de déterminer l’éditeur de texte à utiliser.
@@ -80,7 +80,7 @@ git add docs
 git status
 ```
 
-### "État de versionnage"
+### État de versionnage
 
 Normalement votre prochaine validation gardera les changements apportés au fichier `docs/welcome.md`.
 Car vous l’avez rajouté au suivi de version.
@@ -89,7 +89,7 @@ Car vous l’avez rajouté au suivi de version.
 git commit
 ```
 
-### "Éditeur de texte"
+### Éditeur de texte
 
 La commande ci-dessus devrait vous faire apparaître un éditeur de texte
 pour vous permettre de saisir un message pour votre première validation.
@@ -98,18 +98,16 @@ pour vous permettre de saisir un message pour votre première validation.
 git log
 ```
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 La commande `log` permet d’afficher le journal des changements.
 Logiquement votre première version devrait apparaître.
-
-### "Journal des changements"
 
 ```mermaid
 gitGraph
 commit type: HIGHLIGHT
 ```
 
-### "Première version"
+### 🎆 Première version
 
 Vous avez créé une première version de votre dépôt.
