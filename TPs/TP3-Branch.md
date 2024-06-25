@@ -7,13 +7,13 @@ des documents** pour cela on va se servir d’un
 [Makefile](https://www.gnu.org/software/make/) et de
 [Pandoc](https://pandoc.org/index.html) le couteau suisse des documents.
 
-!!! failure "Dépendances"
+### "Dépendances"
 
-    Installation des dépendances via APT :
+Installation des dépendances via APT :
 
-    ```console
-    sudo apt install pandoc make
-    ```
+```console
+sudo apt install pandoc make
+```
 
 ## Création de la branche
 
@@ -26,28 +26,28 @@ git log
 
 Vous verrez sur le journal des changements là où pointe votre nouvelle branche.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        branch feature/render
-        checkout feature/render
-    ```
+```mermaid
+gitGraph
+commit
+branch feature/render
+checkout feature/render
+```
 
 ## Makefile
 
 Création du Makefile
 
-??? question "Qu’est-ce qu’un Makefile ?"
+### "Qu’est-ce qu’un Makefile ?"
 
-    Un Makefile permet de définir des régles de construction et de les lancer uniquement si cela est nécessaire.
-    C’est-à-dire si la cible est plus récente que les fichiers sources.
+Un Makefile permet de définir des régles de construction et de les lancer uniquement si cela est nécessaire.
+C’est-à-dire si la cible est plus récente que les fichiers sources.
 
-    Quelques liens :
+Quelques liens :
 
-    * [Manuel GNU Make](https://www.gnu.org/software/make/manual/make.html)
-    * [Tutoriel de Developpez](https://gl.developpez.com/tutoriel/outil/makefile/)
+* [Manuel GNU Make](https://www.gnu.org/software/make/manual/make.html)
+* [Tutoriel de Developpez](https://gl.developpez.com/tutoriel/outil/makefile/)
 
 Créez un ficher `Makefile` à la racine du projet avec le contenu ci-dessous :
 
@@ -61,13 +61,13 @@ Pour lancer la construction :
 make
 ```
 
-??? tip "Supprimer les fichiers générés"
+### "Supprimer les fichiers générés"
 
-    Pour supprimer les fichiers générés :
+Pour supprimer les fichiers générés :
 
-    ```console
-    make clean
-    ```
+```console
+make clean
+```
 
 Puis ajouter le fichier et versionnez le avec les commandes suivantes :
 
@@ -77,15 +77,15 @@ git commit -m 'Add Makefile'
 git log
 ```
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        branch feature/render
-        checkout feature/render
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+branch feature/render
+checkout feature/render
+commit type: HIGHLIGHT
+```
 
 ## Ignorer des fichiers
 
@@ -93,51 +93,51 @@ Comme vous pouvez le voir Git souhaite versionner les fichiers HTML générés a
 le Makefile. Pour indiquer à Git que nous ne souhaitons pas suivre les changements
 apportés à ces fichiers Nous pouvons créer un `.gitignore`.
 
-!!! question "Comment ça marche ?"
+### "Comment ça marche ?"
 
-    Un `.gitignore` est une liste de motif.
-    Si un fichier correspond à l’un des motifs
-    il est ignoré du suivis de version.
+Un `.gitignore` est une liste de motif.
+Si un fichier correspond à l’un des motifs
+il est ignoré du suivis de version.
 
-    On peut mettre un `.gitignore` dans n’importe quel dossier.
+On peut mettre un `.gitignore` dans n’importe quel dossier.
 
-    On a la possiblité de rajouter des commentaire en commençant la ligne par une dièse `#`.
+On a la possiblité de rajouter des commentaire en commençant la ligne par une dièse `#`.
 
-    Nous pouvons créer des motifs négatifs en les préfixant par un point d’exclamation `!`.
+Nous pouvons créer des motifs négatifs en les préfixant par un point d’exclamation `!`.
 
-    ```ini
-    # Ignore all yaml files
-    *.yml
-    # Except sample ones
-    !*.sample.yml
-    ```
+```ini
+# Ignore all yaml files
+*.yml
+# Except sample ones
+!*.sample.yml
+```
 
-??? tip "Gitignore global"
+### "Gitignore global"
 
-    ```ini title=".gitignore"
-    # Ignore generated html 
-    dist/*.html
-    ```
+```ini title=".gitignore"
+# Ignore generated html 
+dist/*.html
+```
 
-??? tip "Gitignore dans le dist"
+### "Gitignore dans le dist"
 
-    ```ini title="dist/.gitignore"
-    # Ignore generated html
-    *.html
-    ```
+```ini title="dist/.gitignore"
+# Ignore generated html
+*.html
+```
 
 Ajoutons le dossier `.gitignore` au suivi de version.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+branch feature/render
+checkout feature/render
+commit
+commit type: HIGHLIGHT
+```
 
 ## Changement sur la branche principale
 
@@ -148,18 +148,18 @@ git log
 
 Modifions `welcome.md` et validons les changements sur la branche principale.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        commit
-        checkout main
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+branch feature/render
+checkout feature/render
+commit
+commit
+checkout main
+commit type: HIGHLIGHT
+```
 
 ## Rembobinage changements
 
@@ -181,33 +181,33 @@ notament pour :
 - Éditer le message ou le contenu des versions.
 - Fusionner des versions.
 
-??? tip "Liste non exhaustive des commandes de rembobinage"
+### "Liste non exhaustive des commandes de rembobinage"
 
-    La liste des commandes complète est disponible lors d’un rembobinage
-    interactif en commentaire des tâches à faire.
+La liste des commandes complète est disponible lors d’un rembobinage
+interactif en commentaire des tâches à faire.
 
-    | Commande | Alias | Description                                                   |
-    | :------: | :---: | :------------------------------------------------------------ |
-    |  `pick`  |  `p`  | Ne rien faire.                                                |
-    | `reword` |  `r`  | Reformuler le message.                                        |
-    |  `edit`  |  `e`  | Éditer le contenu de la version.                              |
-    | `squash` |  `s`  | Fusion du commit avec le précédent.                           |
-    | `fixup`  |  `f`  | Fusion du commit avec le précédent en supprimant son message. |
-    |  `drop`  |  `d`  | Supprimer le commit.                                          |
+| Commande | Alias | Description                                                   |
+| :------: | :---: | :------------------------------------------------------------ |
+|  `pick`  |  `p`  | Ne rien faire.                                                |
+| `reword` |  `r`  | Reformuler le message.                                        |
+|  `edit`  |  `e`  | Éditer le contenu de la version.                              |
+| `squash` |  `s`  | Fusion du commit avec le précédent.                           |
+| `fixup`  |  `f`  | Fusion du commit avec le précédent en supprimant son message. |
+|  `drop`  |  `d`  | Supprimer le commit.                                          |
 
 Pour rattraper les changements, laisser tout vos commits à `pick`.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit type: HIGHLIGHT
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+commit
+branch feature/render
+checkout feature/render
+commit type: HIGHLIGHT
+commit type: HIGHLIGHT
+```
 
 ## Hébergement local
 
@@ -217,10 +217,10 @@ Avant de fusionner rajoutons un script permettant d’héberger le rendu HTML.
 --8<-- "docs/n-tiers/git/assets/serve.sh"
 ```
 
-??? tip "Affichage direct de la page de bienvenue"
+### "Affichage direct de la page de bienvenue"
 
-    Renommer `docs/welcome.md` vers `docs/index.md`.
-    Modifier en conséquence la dépendance de la cible `all` du Makefile vers `dist/index.html`.
+Renommer `docs/welcome.md` vers `docs/index.md`.
+Modifier en conséquence la dépendance de la cible `all` du Makefile vers `dist/index.html`.
 
 ## Fusion
 
@@ -235,43 +235,43 @@ technique.
 git rebase -i "$(git merge-base feature/render master)"
 ```
 
-??? question "Qu’est-ce que c’est la commande `merge-base` ?"
+### "Qu’est-ce que c’est la commande `merge-base` ?"
 
-    La commande `merge-base` permet d’obtenir l’identifiant du premier commit
-    en commun entre deux branches.
+La commande `merge-base` permet d’obtenir l’identifiant du premier commit
+en commun entre deux branches.
 
 Afin d’indiquer les actions à faire lors de notre rembobinage l’éditeur de texte
 par défaut devrait s’ouvrir.
 
-??? example "À faire dans le rembobinage"
+### "À faire dans le rembobinage"
 
-    ```git-rebase-todo
-    # Reformulation du message vers
-    # FEAT: Add build scripts
-    pick 74cbbbf Add Makefile
-    # Fusion du commit en ignorant son message
-    squash f9fa981 Add serve script
-    ```
+```git-rebase-todo
+# Reformulation du message vers
+# FEAT: Add build scripts
+pick 74cbbbf Add Makefile
+# Fusion du commit en ignorant son message
+squash f9fa981 Add serve script
+```
 
-    Ce qui nous permettra de fusionner les commit en un comme ci-dessous :
+Ce qui nous permettra de fusionner les commit en un comme ci-dessous :
 
-    ```
-    FEAT: Add HTML render
+```
+FEAT: Add HTML render
 
-    * Add Makefile
-    * Add serve script
-    ```
+* Add Makefile
+* Add serve script
+```
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+commit
+branch feature/render
+checkout feature/render
+commit type: HIGHLIGHT
+```
 
 ### Intégration
 
@@ -284,24 +284,24 @@ git merge feature/render
 git log
 ```
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit type: HIGHLIGHT
-        merge feature/render type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit
+commit
+branch feature/render
+checkout feature/render
+commit
+checkout main
+commit type: HIGHLIGHT
+merge feature/render type: HIGHLIGHT
+```
 
-!!! success "Fusion réussi !"
+### "Fusion réussi !"
 
-    Vous pouvez remarquer que en plus du commit de la branche `feature/render`
-    un autre commit représentant la fusion a bien été créé sur la branche principale.
+Vous pouvez remarquer que en plus du commit de la branche `feature/render`
+un autre commit représentant la fusion a bien été créé sur la branche principale.
 
 ## Étiquetage
 
@@ -316,34 +316,34 @@ git tag v1.0.0 main
 git log
 ```
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render type: HIGHLIGHT tag: "v1.0.0"
-    ```
+```mermaid
+gitGraph
+commit
+commit
+branch feature/render
+checkout feature/render
+commit
+checkout main
+commit
+merge feature/render type: HIGHLIGHT tag: "v1.0.0"
+```
 
-!!! sucess "Première version !"
+### "Première version !"
 
-    Avec cette première version vous avez les bases de Git.
-    Sur le rembobinage vous n’avez eux aucun conflit
-    car Git est capable de les résoudre automatiquement.
-    Ce n’est pas toujours le cas malheureusement…
+Avec cette première version vous avez les bases de Git.
+Sur le rembobinage vous n’avez eux aucun conflit
+car Git est capable de les résoudre automatiquement.
+Ce n’est pas toujours le cas malheureusement…
 
-??? tip "Supression de la branche"
+### "Supression de la branche"
 
-    Une fois que votre branche a été fusionnée avec la branche principale.
-    Il n’est pas rare de vouloir la supprimer car celle-ci devient inutile.
+Une fois que votre branche a été fusionnée avec la branche principale.
+Il n’est pas rare de vouloir la supprimer car celle-ci devient inutile.
 
-    La commande suivante permet de supprimer la branche :
-    
-    ```console
-    git branch -D feature/render
-    ```
+La commande suivante permet de supprimer la branche :
+
+```console
+git branch -D feature/render
+```
