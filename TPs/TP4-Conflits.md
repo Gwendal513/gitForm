@@ -23,20 +23,20 @@ inspirée par la fonction
 
 Validons cette première version.
 
-!!! note "Journal des changements"
+### 📝 Journal des changements
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render tag: "v1.0.0"
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+    commit
+    commit
+    branch feature/render
+    checkout feature/render
+    commit
+    checkout main
+    commit
+    merge feature/render tag: "v1.0.0"
+    commit type: HIGHLIGHT
+```
 
 ## Création d’une branche
 
@@ -48,23 +48,23 @@ comportement.
 --8<-- "docs/n-tiers/git/assets/range.fix.ts"
 ```
 
-!!! note "Journal des changements"
+### 📝 Journal des changements
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render tag: "v1.0.0"
-        commit
-        branch fix/snippets
-        checkout fix/snippets
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+    commit
+    commit
+    branch feature/render
+    checkout feature/render
+    commit
+    checkout main
+    commit
+    merge feature/render tag: "v1.0.0"
+    commit
+    branch fix/snippets
+    checkout fix/snippets
+    commit type: HIGHLIGHT
+```
 
 ## Correctif à chaud
 
@@ -79,41 +79,41 @@ principale :
 --8<-- "docs/n-tiers/git/assets/range.main.ts"
 ```
 
-!!! note "Journal des changements"
+### 📝 Journal des changements
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render tag: "v1.0.0"
-        commit
-        branch fix/snippets
-        checkout fix/snippets
-        commit
-        checkout main
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+    commit
+    commit
+    branch feature/render
+    checkout feature/render
+    commit
+    checkout main
+    commit
+    merge feature/render tag: "v1.0.0"
+    commit
+    branch fix/snippets
+    checkout fix/snippets
+    commit
+    checkout main
+    commit type: HIGHLIGHT
+```
 
 ## Rattrape
 
 Maintenant repartons sur notre branche correctif. Rattrapons la branche
 principale.
 
-!!! failure "Conflits !"
+### ❌ Conflits !
 
-    Vu que sur les deux branches nous avons modifié les mêmes lignes,
-    ceci va créer une situation de conflit que Git ne peut pas automatiquement gérer.
+Vu que sur les deux branches nous avons modifié les mêmes lignes,
+ceci va créer une situation de conflit que Git ne peut pas automatiquement gérer.
 
-    Alors que faire ?
+Alors que faire ?
 
-    Il faut choisir nous-même ce que nous souhaitons garder. N’hésitez pas à
-    **demander de l’aide à vos collègues** si vous n’êtes pas sûrs de se qu’il faut garder ou
-    non.
+Il faut choisir nous-même ce que nous souhaitons garder. N’hésitez pas à
+**demander de l’aide à vos collègues** si vous n’êtes pas sûrs de se qu’il faut garder ou
+non.
 
 ```diff
 interface RangeOptions {
@@ -149,25 +149,25 @@ function* range(options: Partial<RangeOptions> = {}): Generator<number> {
 }
 ```
 
-!!! note "Journal des changements"
+### 📝 Journal des changements
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render tag: "v1.0.0"
-        commit
-        checkout main
-        commit
-        branch fix/snippets
-        checkout fix/snippets
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+    commit
+    commit
+    branch feature/render
+    checkout feature/render
+    commit
+    checkout main
+    commit
+    merge feature/render tag: "v1.0.0"
+    commit
+    checkout main
+    commit
+    branch fix/snippets
+    checkout fix/snippets
+    commit type: HIGHLIGHT
+```
 
 ## Fusion
 
@@ -178,32 +178,32 @@ De cette façon on donne l’impression qu’il n'y a eu aucun conflit. En effet
 commits on été modifiés de manière à faire croire que la branche s’est toujours
 basée sur la dernière version.
 
-!!! note "Journal des changements"
+### 📝 Journal des changements
 
-    ```mermaid
-    gitGraph
-        commit
-        commit
-        branch feature/render
-        checkout feature/render
-        commit
-        checkout main
-        commit
-        merge feature/render tag: "v1.0.0"
-        commit
-        checkout main
-        commit
-        branch fix/snippets
-        checkout fix/snippets
-        commit
-        checkout main
-        commit type: HIGHLIGHT
-        merge fix/snippets type: HIGHLIGHT tag: "v1.1.0"
-    ```
+```mermaid
+gitGraph
+    commit
+    commit
+    branch feature/render
+    checkout feature/render
+    commit
+    checkout main
+    commit
+    merge feature/render tag: "v1.0.0"
+    commit
+    checkout main
+    commit
+    branch fix/snippets
+    checkout fix/snippets
+    commit
+    checkout main
+    commit type: HIGHLIGHT
+    merge fix/snippets type: HIGHLIGHT tag: "v1.1.0"
+```
 
-!!! success "Gérer des conflits"
+### 📍 Gérer des conflits
 
-    Pour éviter que les conflits soient trop compliqués,
-    je vous recommande de faire les plus petites versions possible.
-    De cette façon la cible des conflits sera plus petite
-    et par conséquent plus simple à lire.
+Pour éviter que les conflits soient trop compliqués,
+je vous recommande de faire les plus petites versions possible.
+De cette façon la cible des conflits sera plus petite
+et par conséquent plus simple à lire.
