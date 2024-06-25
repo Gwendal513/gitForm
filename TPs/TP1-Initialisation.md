@@ -6,7 +6,7 @@
 sudo apt install git
 ```
 
-??? tip "Invite bash"
+### "Invite bash"
 
     Si vous souhaitez avoir une meilleure intégration Git dans votre terminal.
     Vous pouvez installer une invite de commande personnalisée qui vous
@@ -40,7 +40,7 @@ git config --global user.name "NOM Prénom"
 git config --global user.email "nom.prénom@partnre.com"
 ```
 
-??? tip "Changement du nom de la branche principale"
+### "Changement du nom de la branche principale"
 
     ```console
     git config --global init.defaultBranch main
@@ -52,7 +52,7 @@ git config --global user.email "nom.prénom@partnre.com"
 
 ## Premier dépôt
 
-!!! warning "Versionnons le bon contenu"
+### "Versionnons le bon contenu"
 
     Afin de ne pas versionner tout vos documents, créons un nouveau répertoire :
 
@@ -72,7 +72,7 @@ Pour créer un dépôt local à l’aide de la commande suivante :
 git init
 ```
 
-??? info "Qu’est-ce qu’il se passe ?"
+### "Qu’est-ce qu’il se passe ?"
 
     Git crée sa base de données objets stocké sous la forme d’une arboresence
     à la racine du dépôt.
