@@ -17,8 +17,16 @@ Créons un morceau de code afin d’implémenter une première ébauche d’une
 inspirée par la fonction
 [`range`](https://docs.python.org/fr/3.8/library/stdtypes.html#range) de Python.
 
-```ts title="docs/snippets.md"
---8<-- "docs/n-tiers/git/assets/range.ts"
+```ts title="range.ts"
+/**
+ * Generates an endless sequence of numbers.
+ * @param min Minimal value
+ */
+function* range(min = 0): Generator<number> {
+  for (;;) {
+    yield min++;
+  }
+}
 ```
 
 Validons cette première version.
@@ -44,8 +52,28 @@ Notre fonction `range` contrairement à la version Python ne prend pas en compte
 la borne de fin et le pas. Donc créons une branche pour corriger ce
 comportement.
 
-```ts title="docs/snippets.md"
---8<-- "docs/n-tiers/git/assets/range.fix.ts"
+```ts title="range.fix.ts"
+interface RangeOptions {
+  start: number;
+  stop: number;
+  step: number;
+}
+
+/**
+ * Generate sequence between two numbers.
+ * @param options Options
+ */
+function* range(options: Partial<RangeOptions> = {}): Generator<number> {
+  const { start, stop, step }: RangeOptions = {
+    start: 0,
+    stop: Number.MAX_SAFE_INTEGER,
+    step: 1,
+    ...options,
+  };
+  for (let i = start; i < stop; i += step) {
+    yield i++;
+  }
+}
 ```
 
 ### 📝 Journal des changements
@@ -75,8 +103,17 @@ sur la version en production. On dit alors qu’on crée un correctif à chaud
 Remplaçons la fonction `range` par celle-ci directement sur la branche
 principale :
 
-```ts title="docs/snippets.md"
---8<-- "docs/n-tiers/git/assets/range.main.ts"
+```ts title="assets/range.main.ts"
+/**
+ * Generates an sequence between two numbers.
+ * @param min Minimal value
+ * @param max Maximal value
+ */
+function* range(min = 0, max = Number.MAX_SAFE_INTEGER): Generator<number> {
+  for (; min < max;) {
+    yield min++;
+  }
+}
 ```
 
 ### 📝 Journal des changements
