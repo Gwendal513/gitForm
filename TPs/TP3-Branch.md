@@ -7,7 +7,7 @@ des documents** pour cela on va se servir d’un
 [Makefile](https://www.gnu.org/software/make/) et de
 [Pandoc](https://pandoc.org/index.html) le couteau suisse des documents.
 
-### "Dépendances"
+### 💻 Dépendances
 
 Installation des dépendances via APT :
 
@@ -26,7 +26,7 @@ git log
 
 Vous verrez sur le journal des changements là où pointe votre nouvelle branche.
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -39,7 +39,7 @@ checkout feature/render
 
 Création du Makefile
 
-### "Qu’est-ce qu’un Makefile ?"
+### 📍 Qu’est-ce qu’un Makefile ?
 
 Un Makefile permet de définir des régles de construction et de les lancer uniquement si cela est nécessaire.
 C’est-à-dire si la cible est plus récente que les fichiers sources.
@@ -61,7 +61,7 @@ Pour lancer la construction :
 make
 ```
 
-### "Supprimer les fichiers générés"
+### Supprimer les fichiers générés
 
 Pour supprimer les fichiers générés :
 
@@ -77,7 +77,7 @@ git commit -m 'Add Makefile'
 git log
 ```
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -93,7 +93,7 @@ Comme vous pouvez le voir Git souhaite versionner les fichiers HTML générés a
 le Makefile. Pour indiquer à Git que nous ne souhaitons pas suivre les changements
 apportés à ces fichiers Nous pouvons créer un `.gitignore`.
 
-### "Comment ça marche ?"
+### 📍 Comment ça marche ?
 
 Un `.gitignore` est une liste de motif.
 Si un fichier correspond à l’un des motifs
@@ -128,7 +128,7 @@ dist/*.html
 
 Ajoutons le dossier `.gitignore` au suivi de version.
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -148,7 +148,7 @@ git log
 
 Modifions `welcome.md` et validons les changements sur la branche principale.
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -181,7 +181,7 @@ notament pour :
 - Éditer le message ou le contenu des versions.
 - Fusionner des versions.
 
-### "Liste non exhaustive des commandes de rembobinage"
+### 📍 Liste non exhaustive des commandes de rembobinage
 
 La liste des commandes complète est disponible lors d’un rembobinage
 interactif en commentaire des tâches à faire.
@@ -197,7 +197,7 @@ interactif en commentaire des tâches à faire.
 
 Pour rattraper les changements, laisser tout vos commits à `pick`.
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -217,7 +217,7 @@ Avant de fusionner rajoutons un script permettant d’héberger le rendu HTML.
 --8<-- "docs/n-tiers/git/assets/serve.sh"
 ```
 
-### "Affichage direct de la page de bienvenue"
+### 📍 Affichage direct de la page de bienvenue
 
 Renommer `docs/welcome.md` vers `docs/index.md`.
 Modifier en conséquence la dépendance de la cible `all` du Makefile vers `dist/index.html`.
@@ -235,7 +235,7 @@ technique.
 git rebase -i "$(git merge-base feature/render master)"
 ```
 
-### "Qu’est-ce que c’est la commande `merge-base` ?"
+### 📍 Qu’est-ce que c’est la commande `merge-base` ?
 
 La commande `merge-base` permet d’obtenir l’identifiant du premier commit
 en commun entre deux branches.
@@ -243,7 +243,7 @@ en commun entre deux branches.
 Afin d’indiquer les actions à faire lors de notre rembobinage l’éditeur de texte
 par défaut devrait s’ouvrir.
 
-### "À faire dans le rembobinage"
+### À faire dans le rembobinage
 
 ```git-rebase-todo
 # Reformulation du message vers
@@ -262,7 +262,7 @@ FEAT: Add HTML render
 * Add serve script
 ```
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -284,7 +284,7 @@ git merge feature/render
 git log
 ```
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -298,7 +298,7 @@ commit type: HIGHLIGHT
 merge feature/render type: HIGHLIGHT
 ```
 
-### "Fusion réussi !"
+### 🎆 Fusion réussi !
 
 Vous pouvez remarquer que en plus du commit de la branche `feature/render`
 un autre commit représentant la fusion a bien été créé sur la branche principale.
@@ -316,7 +316,7 @@ git tag v1.0.0 main
 git log
 ```
 
-### "Journal des changements"
+### 📝 Journal des changements
 
 ```mermaid
 gitGraph
@@ -330,14 +330,14 @@ commit
 merge feature/render type: HIGHLIGHT tag: "v1.0.0"
 ```
 
-### "Première version !"
+### 🎆 Première version !
 
 Avec cette première version vous avez les bases de Git.
 Sur le rembobinage vous n’avez eux aucun conflit
 car Git est capable de les résoudre automatiquement.
 Ce n’est pas toujours le cas malheureusement…
 
-### "Supression de la branche"
+### 📍 Supression de la branche
 
 Une fois que votre branche a été fusionnée avec la branche principale.
 Il n’est pas rare de vouloir la supprimer car celle-ci devient inutile.
