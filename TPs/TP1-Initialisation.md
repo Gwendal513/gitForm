@@ -21,7 +21,12 @@ git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt
 Puis injection dans le fichier `.bash_aliases` :
 
 ```bash title="~/.bash_aliases"
---8<-- "docs/n-tiers/git/assets/bash-git-prompt.sh"
+cat <<EOF >> "${HOME}/.bash_aliases"
+if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "${HOME}/.bash-git-prompt/gitprompt.sh"
+fi
+EOF
 ```
 
 ## Configuration
