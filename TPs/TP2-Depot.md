@@ -11,23 +11,23 @@ mkdir -p docs bin dist
 
 ## Premier fichier
 
-??? tip "Installation de Codium"
+### "Installation de Codium"
 
-    Pré-requis : [Configuration du serveur de mandataire pour snap](../../../proxy/proxy.md#snap).
+Pré-requis : [Configuration du serveur de mandataire pour snap](../../../proxy/proxy.md#snap).
 
-    ```console
-    sudo snap install --classic codium
-    ```
+```console
+sudo snap install --classic codium
+```
 
-    Source : [Site officiel de Codium](https://vscodium.com/#install)
+Source : [Site officiel de Codium](https://vscodium.com/#install)
 
-??? tip "Création d’un alias Bash"
+### "Création d’un alias Bash"
 
-    ```console
-    echo 'alias c.="codium ."' >> .bash_aliases
-    ```
+```console
+echo 'alias c.="codium ."' >> .bash_aliases
+```
 
-    L’alias `c.` permet d’ouvrir Codium dans le répertoire courant de votre terminal.
+L’alias `c.` permet d’ouvrir Codium dans le répertoire courant de votre terminal.
 
 ```md title="docs/welcome.md"
 # Bienvenue
@@ -39,20 +39,20 @@ mkdir -p docs bin dist
 git status
 ```
 
-!!! info "État de versionnage"
+### "État de versionnage"
 
-    La commande `status` de Git est très pratique.
-    En effet celle-ci vous permet d’avoir facilement les renseignements suivants :
+La commande `status` de Git est très pratique.
+En effet celle-ci vous permet d’avoir facilement les renseignements suivants :
 
-    * Si vous avez des fichiers non suivis.
-    * Si vous avez des changements par rapport à votre dernière validation.
-    * La version où vous êtes.
+* Si vous avez des fichiers non suivis.
+* Si vous avez des changements par rapport à votre dernière validation.
+* La version où vous êtes.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-    ```
+```mermaid
+gitGraph
+```
 
 ## Première validation
 
@@ -60,56 +60,56 @@ Maintenant que vous avez créé un nouveau fichier et que vous êtes satisfait d
 son contenu (du moins pour le moment). Vous allez pouvoir faire une première
 version grâce à la commande `commit`.
 
-??? tip "Éditeur par défaut"
+### "Éditeur par défaut"
 
-    Beaucoup de logiciel notamment ceux en ligne de commande utilise la variable d’environnement `EDITOR`
-    afin de déterminer l’éditeur de texte à utiliser.
+Beaucoup de logiciel notamment ceux en ligne de commande utilise la variable d’environnement `EDITOR`
+afin de déterminer l’éditeur de texte à utiliser.
 
-    ```console
-    export EDITOR=vim
-    ```
+```console
+export EDITOR=vim
+```
 
-    Pour rendre persistante cette variable vous pouvez injecter cette ligne de commande dans votre `.bash_aliases`.
+Pour rendre persistante cette variable vous pouvez injecter cette ligne de commande dans votre `.bash_aliases`.
 
-    ```console
-    echo 'export EDITOR=vim' >> ~/.bash_aliases
-    ```
+```console
+echo 'export EDITOR=vim' >> ~/.bash_aliases
+```
 
 ```console
 git add docs
 git status
 ```
 
-!!! question "État de versionnage"
+### "État de versionnage"
 
-    Normalement votre prochaine validation gardera les changements apportés au fichier `docs/welcome.md`.
-    Car vous l’avez rajouté au suivi de version.
+Normalement votre prochaine validation gardera les changements apportés au fichier `docs/welcome.md`.
+Car vous l’avez rajouté au suivi de version.
 
 ```console
 git commit
 ```
 
-!!! question "Éditeur de texte"
+### "Éditeur de texte"
 
-    La commande ci-dessus devrait vous faire apparaître un éditeur de texte
-    pour vous permettre de saisir un message pour votre première validation.
+La commande ci-dessus devrait vous faire apparaître un éditeur de texte
+pour vous permettre de saisir un message pour votre première validation.
 
 ```console
 git log
 ```
 
-!!! question "Journal des changements"
+### "Journal des changements"
 
-    La commande `log` permet d’afficher le journal des changements.
-    Logiquement votre première version devrait apparaître.
+La commande `log` permet d’afficher le journal des changements.
+Logiquement votre première version devrait apparaître.
 
-!!! note "Journal des changements"
+### "Journal des changements"
 
-    ```mermaid
-    gitGraph
-        commit type: HIGHLIGHT
-    ```
+```mermaid
+gitGraph
+commit type: HIGHLIGHT
+```
 
-!!! success "Première version"
+### "Première version"
 
-    Vous avez créé une première version de votre dépôt.
+Vous avez créé une première version de votre dépôt.
