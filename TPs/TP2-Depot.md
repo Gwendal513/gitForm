@@ -11,23 +11,11 @@ mkdir -p docs bin dist
 
 ## Premier fichier
 
-### 💻 Installation de Codium
-
-Pré-requis : [Configuration du serveur de mandataire pour snap](../../../proxy/proxy.md#snap).
+Pour créer notre premier fichier nous allons utiliser l'éditeur de texte via terminal nano
 
 ```console
-sudo snap install --classic codium
+nano docs/welcome.md
 ```
-
-Source : [Site officiel de Codium](https://vscodium.com/#install)
-
-### Création d’un alias Bash
-
-```console
-echo 'alias c.="codium ."' >> .bash_aliases
-```
-
-L’alias `c.` permet d’ouvrir Codium dans le répertoire courant de votre terminal.
 
 ```md title="docs/welcome.md"
 # Bienvenue
@@ -66,13 +54,13 @@ Beaucoup de logiciel notamment ceux en ligne de commande utilise la variable d�
 afin de déterminer l’éditeur de texte à utiliser.
 
 ```console
-export EDITOR=vim
+export EDITOR=nano
 ```
 
 Pour rendre persistante cette variable vous pouvez injecter cette ligne de commande dans votre `.bash_aliases`.
 
 ```console
-echo 'export EDITOR=vim' >> ~/.bash_aliases
+echo 'export EDITOR=nano' >> ~/.bash_aliases
 ```
 
 ```console
