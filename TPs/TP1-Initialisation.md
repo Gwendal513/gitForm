@@ -1,6 +1,15 @@
 # TP1 – Initialisation
+## Installation sur une machine Windows
 
-## Installation
+Nous allons utiliser MSYS2 qui nous propose plusieurs outils intéressants comme un bash et un gestionnaire de paquets (pacman), la procédure d'installation est décrite [ici](https://www.msys2.org/#installation). 
+
+Ensuite il est possible d'installer Git en utilisant pacman
+
+```console
+pacman -S git
+```
+
+## Installation sur une machine linux
 
 ```console
 sudo apt install git
@@ -37,8 +46,8 @@ Git utilise les champs de configuration ci-dessous pour signer les commits :
 
 | Nom de la variable | Description                          | Exemple                   |
 | :----------------: | :----------------------------------- | :------------------------ |
-|    `user.name`     | Nom ou pseudo de l’utilisateur       | "PENAUD Loïc"             |
-|    `user.email`    | Adresse de courriel de l’utilisateur | "loic.penaud@partnre.com" |
+|    `user.name`     | Nom ou pseudo de l’utilisateur       | "NOM Prénom"             |
+|    `user.email`    | Adresse de courriel de l’utilisateur | "prenom.nom@partnre.com" |
 
 ```console
 git config --global user.name "NOM Prénom"
