@@ -1,5 +1,5 @@
 # TP1 – Initialisation
-## Installation sur une machine Windows
+## 🪟 Installation sur une machine Windows
 
 Nous allons utiliser MSYS2 qui nous propose plusieurs outils intéressants comme un bash et un gestionnaire de paquets (pacman), la procédure d'installation est décrite [ici](https://www.msys2.org/#installation). 
 
@@ -9,7 +9,7 @@ Ensuite il est possible d'installer Git en utilisant pacman
 pacman -S git
 ```
 
-## Installation sur une machine linux
+## 🐧 Installation sur une machine linux
 
 ```console
 sudo apt install git
