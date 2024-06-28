@@ -9,13 +9,13 @@ des documents** pour cela on va se servir d’un
 
 ### 💻 Dépendances
 
-#### Pour les machines linux
+#### 🐧 Pour les machines linux
 Installation des dépendances via APT :
 
 ```console
 sudo apt install pandoc make
 ```
-#### Pour les machines Windows
+#### 🪟 Pour les machines Windows
 
 Installation de Pandoc via la procédure décrite [ici](https://pandoc.org/installing.html)
 
@@ -79,7 +79,7 @@ $(OUTDIR)/%.html: $(INDIR)/%.md
 clean:
 	rm -rf dist/*.html
 ```
-#### Pour les machines Windows
+#### 🪟 Pour les machines Windows
 
 On précise le chemin absolu de l'exécutable pandoc
 
