@@ -175,7 +175,7 @@ commit type: HIGHLIGHT
 ## Changement sur la branche principale
 
 ```console
-git checkout master
+git checkout main
 git log
 ```
 
@@ -202,7 +202,7 @@ integrés dans la branche fille.
 ### Rembobinage
 
 ```console
-git rebase -i master
+git rebase -i main
 ```
 
 Le rembobinage permet de manipuler l’historique. Cette fonction est pratique
@@ -317,7 +317,7 @@ surplus d’informations on cache les commits avec des changements purement
 technique.
 
 ```console
-git rebase -i "$(git merge-base feature/render master)"
+git rebase -i "$(git merge-base feature/render main)"
 ```
 
 ### 📍 Qu’est-ce que c’est la commande `merge-base` ?
@@ -364,7 +364,7 @@ Après avoir rendu notre historique propre en fusionnant des commits. Intégrons
 les changements sur la branche principale à l’aide de la commande `merge`.
 
 ```console
-git checkout master
+git checkout main
 git merge feature/render
 git log
 ```
